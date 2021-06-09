@@ -1,25 +1,29 @@
 import React from 'react';
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
+import { styled } from '@material-ui/core/styles';
+import CenterBox from '../CenterBox/CenterBox';
+import Typography from '@material-ui/core/Typography';
+
 
 const useStyles = makeStyles({
-  centerBox: {
-    textAlign: "center"
+  errorText: {
+    color: "red",
   },
 });
 
 export const ErrorText = (props) => {
 
-  const classes = useStyles();
   const { hasError } = props;
+  const classes = useStyles();
 
   if (hasError) {
     return (
-      <Box m={2} className={classes.centerBox}>
-        <p>
-          We had problems fetching your data. Please try again.
-        </p>
-      </Box>
+      <CenterBox>
+        <Typography className={classes.errorText}>
+          We had problems fetching your data.Please try again.
+        </Typography >
+      </CenterBox>
     );
   }
 

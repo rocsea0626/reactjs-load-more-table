@@ -1,5 +1,6 @@
 import React from 'react';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import CenterBox from '../CenterBox/CenterBox';
 
 export const LoadingAnimation = (props) => {
 
@@ -7,7 +8,9 @@ export const LoadingAnimation = (props) => {
 
   if (isLoading) {
     return (
-      <CircularProgress />
+      <CenterBox>
+        <CircularProgress />
+      </CenterBox>
     );
   }
 
