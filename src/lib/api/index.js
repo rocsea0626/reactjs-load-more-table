@@ -6,8 +6,6 @@ const PAGE_SIZE = 3;
 const resolveOrRejectCollection = (timesCalled, collection) => () => {
   return new Promise((resolve, reject) => {
     const id = setTimeout(() => {
-      console.log(`resolveOrRejectCollection(timesCalled=${timesCalled})`);
-
       timesCalled += 1;
       const sliceStart = PAGE_SIZE * (Math.ceil(timesCalled / 2) - 1);
       const sliceEnd = PAGE_SIZE * Math.ceil(timesCalled / 2);
@@ -42,7 +40,6 @@ const getProjectsDiff = () => {
 
 const getUsersDiff = () => {
   let timesCalled = 0;
-  console.log(`getUsersDiff(timesCalled=${timesCalled})`);
 
   return resolveOrRejectCollection(timesCalled, usersDiff);
 };

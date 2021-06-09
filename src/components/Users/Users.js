@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import api from '../../lib/api';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -32,26 +32,20 @@ const useStyles = makeStyles({
   },
 });
 
-export const Users = () => {
+export const Users = (props) => {
 
   const classes = useStyles();
-  const [users, setUsers] = useState([]);
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [sortOrder, setSortOrder] = useState('desc');
 
-  const fetchData = async () => {
-    try {
-      setLoading(true);
-      const res = await api.getUsersDiff();
-      setLoading(false);
-      setError(null);
-      setUsers((prevUsers) => [...prevUsers, ...res.data]);
-    } catch (err) {
-      setLoading(false);
-      setError(err);
-    }
-  };
+  const {
+    order,
+    orderBy,
+    users,
+    isLoading,
+    error,
+    handleOrderChanged,
+    onLoadClicked
+  } = props;
+
 
   const stableSort = (array, comparator) => {
     const stabilizedThis = array.map((el, index) => [el, index]);
@@ -79,14 +73,6 @@ export const Users = () => {
     return 0;
   }
 
-  const handleRequestSort = () => {
-    setSortOrder(sortOrder === 'desc' ? 'asc' : 'desc');
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
   return (
     <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="users_table">
@@ -95,12 +81,12 @@ export const Users = () => {
             <TableCell>
               <TableSortLabel
                 active={true}
-                direction={sortOrder}
-                onClick={() => handleRequestSort()}
+                direction={order}
+                onClick={() => handleOrderChanged()}
               >
                 Date
                 <span className={classes.visuallyHidden}>
-                  {sortOrder === 'desc' ? 'sorted descending' : 'sorted ascending'}
+                  {order === 'desc' ? 'sorted descending' : 'sorted ascending'}
                 </span>
               </TableSortLabel>
             </TableCell>
@@ -110,10 +96,10 @@ export const Users = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {stableSort(users, getComparator(sortOrder, 'timestamp')).map((user) => (
+          {stableSort(users, getComparator(order, orderBy)).map((user) => (
             <TableRow key={user.id}>
               <TableCell component="th" scope="row">
-                {moment(user.timestamp).format('YYYY-MM-DD')}
+                {moment(user[orderBy]).format('YYYY-MM-DD')}
               </TableCell>
               <TableCell>{user.id}</TableCell>
               <TableCell>{user.diff[0].oldValue}</TableCell>
@@ -124,16 +110,26 @@ export const Users = () => {
       </Table>
 
       <ErrorText hasError={error ? true : false} />
-      <LoadingAnimation isLoading={loading} />
+      <LoadingAnimation isLoading={isLoading} />
 
       <LoadButton
-        isLoading={loading}
-        onClicked={fetchData}
+        isLoading={isLoading}
+        onClicked={onLoadClicked}
         hasError={error ? true : false}
       />
 
     </TableContainer>
   );
+};
+
+Users.propTypes = {
+  orderBy: PropTypes.string.isRequired,
+  order: PropTypes.string.isRequired,
+  users: PropTypes.array.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+  handleOrderChanged: PropTypes.func.isRequired,
+  onLoadClicked: PropTypes.func.isRequired,
+  error: PropTypes.object,
 };
 
 export default Users;
