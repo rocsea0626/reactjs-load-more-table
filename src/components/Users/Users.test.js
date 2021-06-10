@@ -3,6 +3,7 @@ import { shallow } from 'enzyme';
 import { Users } from './Users';
 import { mount } from 'enzyme';
 import { usersDiff } from '../../lib/api/data';
+import renderer from 'react-test-renderer';
 
 describe('<Users />', () => {
 
@@ -84,7 +85,7 @@ describe('<Users />', () => {
 
       const rows = wrapper.find({ 'data-testid': 'users-table-row' });
       expect(rows).toHaveLength(3);
-      expect(rows.first().find({ 'data-testid': 'users-table-row-date' }).text()).toBe('2020-02-16');
+      expect(rows.first().find({ 'data-testid': 'users-table-row-date' }).text()).toBe('2020-02-15');
       expect(rows.last().find({ 'data-testid': 'users-table-row-date' }).text()).toBe('2020-02-14');
 
     });
@@ -108,7 +109,7 @@ describe('<Users />', () => {
       const rows = wrapper.find({ 'data-testid': 'users-table-row' });
       expect(rows).toHaveLength(3);
       expect(rows.first().find({ 'data-testid': 'users-table-row-date' }).text()).toBe('2020-02-14');
-      expect(rows.last().find({ 'data-testid': 'users-table-row-date' }).text()).toBe('2020-02-16');
+      expect(rows.last().find({ 'data-testid': 'users-table-row-date' }).text()).toBe('2020-02-15');
 
     });
 
@@ -180,4 +181,40 @@ describe('<Users />', () => {
     });
 
   });
+
+  describe('snapshot test', () => {
+
+    it('desc order', () => {
+      const tree = renderer
+        .create(
+          <Users
+            users={usersDiff.slice(0, 10)}
+            error={null}
+            isLoading={false}
+            order={'desc'}
+            orderBy='timestamp'
+            handleOrderChanged={() => { }}
+            onLoadClicked={() => { }}
+          />
+        ).toJSON();
+      expect(tree).toMatchSnapshot();
+    });
+
+    it('asc order', () => {
+      const tree = renderer
+        .create(
+          <Users
+            users={usersDiff.slice(0, 10)}
+            error={null}
+            isLoading={false}
+            order={'asc'}
+            orderBy='timestamp'
+            handleOrderChanged={() => { }}
+            onLoadClicked={() => { }}
+          />
+        ).toJSON();
+      expect(tree).toMatchSnapshot();
+    });
+  })
+
 });
