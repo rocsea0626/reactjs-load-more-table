@@ -20,6 +20,7 @@ export const App = () => {
   return (
     <Container
       className="app"
+      maxWidth="md"
       data-testid="app-box"
     >
       <Users

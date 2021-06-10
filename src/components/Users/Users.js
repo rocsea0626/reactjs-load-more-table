@@ -16,7 +16,9 @@ import moment from 'moment';
 
 const useStyles = makeStyles({
   table: {
-    minWidth: 650,
+    // minWidth: 650,
+  },
+  tableHeader: {
     fontWeight: 800
   },
   visuallyHidden: {
@@ -78,10 +80,10 @@ export const Users = (props) => {
       <Table
         data-testid="users-table"
         className={classes.table}
-        aria-label="users_table">
-        <TableHead>
+      >
+        <TableHead >
           <TableRow>
-            <TableCell>
+            <TableCell className={classes.tableHeader}>
               <TableSortLabel
                 data-testid="users-sort"
                 active={true}
@@ -94,9 +96,9 @@ export const Users = (props) => {
                 </span>
               </TableSortLabel>
             </TableCell>
-            <TableCell>User&nbsp;ID</TableCell>
-            <TableCell>Old&nbsp;value</TableCell>
-            <TableCell>New&nbsp;value</TableCell>
+            <TableCell className={classes.tableHeader}>User&nbsp;ID</TableCell>
+            <TableCell className={classes.tableHeader}>Old&nbsp;value</TableCell>
+            <TableCell className={classes.tableHeader}>New&nbsp;value</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
