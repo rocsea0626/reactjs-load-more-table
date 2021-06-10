@@ -1,34 +1,20 @@
-import React, { useEffect, useState } from 'react';
-import api from '../../lib/api';
+import React, { useState } from 'react';
 import Container from '@material-ui/core/Container';
 import Users from '../Users/Users'
+import { useUsersLoadMore } from '../../hooks'
 
 export const App = () => {
 
-  const [users, setUsers] = useState([]);
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false);
   const [order, setOrder] = useState('desc');
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
-    try {
-      setLoading(true);
-      setError(null);
-      const res = await api.getUsersDiff();
-      setLoading(false);
-      setUsers((prevUsers) => [...prevUsers, ...res.data]);
-    } catch (err) {
-      setLoading(false);
-      setError(err);
-    }
-  };
+  const [loadCount, setLoadCount] = useState(0);
+  const [users, error, loading] = useUsersLoadMore(loadCount);
 
   const handleOrderChanged = () => {
     setOrder(order === 'desc' ? 'asc' : 'desc');
+  }
+
+  const handleLoadMore = () => {
+    setLoadCount((prevLoadCount) => prevLoadCount + 1);
   }
 
   return (
@@ -43,7 +29,7 @@ export const App = () => {
         order={order}
         orderBy='timestamp'
         handleOrderChanged={handleOrderChanged}
-        onLoadClicked={fetchData}
+        onLoadClicked={handleLoadMore}
       />
     </Container>
   );
