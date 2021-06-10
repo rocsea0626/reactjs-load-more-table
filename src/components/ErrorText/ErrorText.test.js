@@ -1,17 +1,19 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { App } from './App';
+import { ErrorText } from './ErrorText';
 
-describe('<App />', () => {
-  let wrapper;
+describe('<ErrorText />', () => {
 
-  beforeEach(() => {
-    wrapper = shallow(<App />);
-  });
-
-  describe('render()', () => {
-    it('renders the Box', () => {
-      expect(wrapper.find({ 'data-testid': 'app-box' })).toHaveLength(1);
+  describe('test ErrorText', () => {
+    it('renders ErrorText, show={true}', () => {
+      const wrapper = shallow(<ErrorText show={true} />);
+      expect(wrapper.find({ 'data-testid': 'error-text-box' })).toBeDefined();
     });
+
+    it('renders ErrorText, show={false}', () => {
+      const wrapper = shallow(<ErrorText show={false} />);
+      expect(wrapper.find({ 'data-testid': 'error-text-box' })).toBeDefined();
+    });
+
   });
 });

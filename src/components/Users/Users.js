@@ -75,14 +75,18 @@ export const Users = (props) => {
 
   return (
     <TableContainer component={Paper}>
-      <Table className={classes.table} aria-label="users_table">
+      <Table
+        data-testid="users-table"
+        className={classes.table}
+        aria-label="users_table">
         <TableHead>
           <TableRow>
             <TableCell>
               <TableSortLabel
+                data-testid="users-sort"
                 active={true}
                 direction={order}
-                onClick={() => handleOrderChanged()}
+                onClick={handleOrderChanged}
               >
                 Date
                 <span className={classes.visuallyHidden}>
@@ -97,8 +101,15 @@ export const Users = (props) => {
         </TableHead>
         <TableBody>
           {stableSort(users, getComparator(order, orderBy)).map((user) => (
-            <TableRow key={user.id}>
-              <TableCell component="th" scope="row">
+            <TableRow
+              key={user.id}
+              data-testid="users-table-row"
+            >
+              <TableCell
+                data-testid="users-table-row-date"
+                component="th"
+                scope="row"
+              >
                 {moment(user[orderBy]).format('YYYY-MM-DD')}
               </TableCell>
               <TableCell>{user.id}</TableCell>
@@ -109,11 +120,18 @@ export const Users = (props) => {
         </TableBody>
       </Table>
 
-      <ErrorText hasError={error ? true : false} />
-      <LoadingAnimation isLoading={isLoading} />
+      <ErrorText
+        data-testid="users-error-text"
+        show={error ? true : false}
+      />
+      <LoadingAnimation
+        data-testid="users-loading-anim"
+        show={isLoading}
+      />
 
       <LoadButton
-        isLoading={isLoading}
+        data-testid="users-load-btn"
+        show={!isLoading}
         onClicked={onLoadClicked}
         hasError={error ? true : false}
       />

@@ -5,12 +5,14 @@ import CenterBox from '../CenterBox/CenterBox';
 
 export const LoadingAnimation = (props) => {
 
-  const { isLoading } = props;
+  const { show } = props;
 
-  if (isLoading) {
+  if (show) {
     return (
       <CenterBox>
-        <CircularProgress />
+        <CircularProgress
+          data-testid="loading-animation-box"
+        />
       </CenterBox>
     );
   }
@@ -18,7 +20,7 @@ export const LoadingAnimation = (props) => {
 };
 
 LoadingAnimation.propTypes = {
-  isLoading: PropTypes.bool.isRequired,
+  show: PropTypes.bool.isRequired,
 };
 
 export default LoadingAnimation;

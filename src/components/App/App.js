@@ -10,6 +10,10 @@ export const App = () => {
   const [loading, setLoading] = useState(false);
   const [order, setOrder] = useState('desc');
 
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   const fetchData = async () => {
     try {
       setLoading(true);
@@ -27,12 +31,11 @@ export const App = () => {
     setOrder(order === 'desc' ? 'asc' : 'desc');
   }
 
-  useEffect(() => {
-    fetchData();
-  }, []);
-
   return (
-    <Container className="app">
+    <Container
+      className="app"
+      data-testid="app-box"
+    >
       <Users
         users={users}
         error={error}

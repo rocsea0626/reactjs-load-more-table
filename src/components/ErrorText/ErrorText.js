@@ -13,25 +13,23 @@ const useStyles = makeStyles({
 
 export const ErrorText = (props) => {
 
-  const { hasError } = props;
+  const { show } = props;
   const classes = useStyles();
 
-  if (hasError) {
+  if (show) {
     return (
-      <CenterBox>
+      <CenterBox data-testid="error-text-box">
         <Typography className={classes.errorText}>
           We had problems fetching your data.Please try again.
         </Typography >
-      </CenterBox>
+      </CenterBox >
     );
   }
-
   return null;
-
 };
 
 ErrorText.propTypes = {
-  hasError: PropTypes.bool.isRequired,
+  show: PropTypes.bool.isRequired,
 };
 
 export default ErrorText;

@@ -9,27 +9,29 @@ export const LoadButton = (props) => {
   const {
     hasError,
     onClicked,
-    isLoading
+    show
   } = props;
 
-  if (isLoading) {
-    return null;
+  if (show) {
+    return (
+      <CenterBox data-testid="load-btn-box">
+        <Button
+          data-testid="load-btn"
+          variant="contained"
+          color="primary"
+          onClick={onClicked}>
+          {hasError ? 'Retry' : 'Load more'}
+        </Button>
+      </CenterBox>
+    );
   }
-
-  return (
-    <CenterBox>
-      <Button variant="contained" color="primary" onClick={onClicked}>
-        {hasError ? 'Retry' : 'Load more'}
-      </Button>
-    </CenterBox>
-  );
-
+  return null;
 };
 
 LoadButton.propTypes = {
-  isLoading: PropTypes.bool.isRequired,
+  show: PropTypes.bool.isRequired,
   hasError: PropTypes.bool.isRequired,
-  onClicked: PropTypes.func.isRequired,
+  onClicked: PropTypes.func,
 };
 
 export default LoadButton;
