@@ -24,7 +24,15 @@ Your task is to implement a component or a set of components allowing the users 
 ![Screen Shot 2020-03-03 at 13 25 09](https://user-images.githubusercontent.com/3663640/75771398-92cf9300-5d52-11ea-8d06-660cd55bb1a1.png)
 
 
-# Setup
+## How to use
+### Run app in dev mode
+`npm install`
+`npm start`
+
+### Run test
+`npm test`
+
+## Setup
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
