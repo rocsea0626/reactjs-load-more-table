@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
-import CenterBox from '../CenterBox/CenterBox';
+import { CenterBox } from '../../components';
 import Typography from '@material-ui/core/Typography';
 
 

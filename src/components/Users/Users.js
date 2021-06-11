@@ -9,10 +9,12 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import TableSortLabel from '@material-ui/core/TableSortLabel';
-import ErrorText from '../ErrorText/ErrorText';
-import LoadingAnimation from '../LoadingAnimation/LoadingAnimation';
-import LoadButton from '../LoadButton/LoadButton';
 import moment from 'moment';
+import {
+  ErrorText,
+  LoadingAnimation,
+  LoadButton
+} from '../../components';
 
 const useStyles = makeStyles({
   table: {

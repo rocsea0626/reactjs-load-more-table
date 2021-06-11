@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Container from '@material-ui/core/Container';
-import Users from '../Users/Users'
+import { Users } from '../../components'
 import { useUsersLoadMore } from '../../hooks'
 
 export const App = () => {

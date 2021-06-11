@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CenterBox from '../CenterBox/CenterBox';
+import { CenterBox } from '../../components';
 import Button from '@material-ui/core/Button';
 
 
