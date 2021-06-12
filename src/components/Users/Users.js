@@ -15,10 +15,13 @@ import {
   LoadingAnimation,
   LoadButton
 } from '../../components';
+import {
+  SortOrder
+} from '../../constants'
 
 const useStyles = makeStyles({
   table: {
-    // minWidth: 650,
+    maxWidth: 1400
   },
   tableHeader: {
     fontWeight: 800
@@ -51,30 +54,30 @@ export const Users = (props) => {
   } = props;
 
 
-  const stableSort = (array, comparator) => {
-    const stabilizedThis = array.map((el, index) => [el, index]);
-    stabilizedThis.sort((a, b) => {
-      const order = comparator(a[0], b[0]);
+  const stableSort = (users, comparator) => {
+
+    // to mantaian sort stabiliy, temporary array holds users with position and sort-value
+    const stabalizedUsers = users.map((user, index) => [user, index]);
+    const INDEX_USER = 0, INDEX_POS = 1;
+
+    stabalizedUsers.sort((user1, user2) => {
+
+      const order = comparator(user1[INDEX_USER], user2[INDEX_USER]);
       if (order !== 0) return order;
-      return a[1] - b[1];
+      return user1[INDEX_POS] - user2[INDEX_POS];
     });
-    return stabilizedThis.map((el) => el[0]);
+
+    return stabalizedUsers.map((user) => user[INDEX_USER]);
   }
 
   const getComparator = (order, orderBy) => {
-    return order === 'desc'
-      ? (a, b) => descendingComparator(a, b, orderBy)
-      : (a, b) => -descendingComparator(a, b, orderBy);
+    return order === SortOrder.DESC
+      ? (user1, user2) => descendingComparator(user1, user2, orderBy)
+      : (user1, user2) => -descendingComparator(user1, user2, orderBy);
   }
 
-  const descendingComparator = (a, b, orderBy) => {
-    if (b[orderBy] < a[orderBy]) {
-      return -1;
-    }
-    if (b[orderBy] > a[orderBy]) {
-      return 1;
-    }
-    return 0;
+  const descendingComparator = (user1, user2, orderBy) => {
+    return Number.parseInt(user2[orderBy]) - Number.parseInt(user1[orderBy])
   }
 
   return (

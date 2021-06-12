@@ -12,7 +12,6 @@ function useUsersLoadMore(loadCount) {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    // console.log(`useEffect(loadCount= ${loadCount})`);
     const fetchUsers = async () => {
       try {
         setLoading(true);

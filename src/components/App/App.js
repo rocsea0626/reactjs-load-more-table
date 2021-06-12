@@ -2,15 +2,17 @@ import React, { useState } from 'react';
 import Container from '@material-ui/core/Container';
 import { Users } from '../../components'
 import { useUsersLoadMore } from '../../hooks'
-
+import {
+  SortOrder
+} from '../../constants'
 export const App = () => {
 
-  const [order, setOrder] = useState('desc');
+  const [order, setOrder] = useState(SortOrder.DESC);
   const [loadCount, setLoadCount] = useState(0);
   const [users, error, loading] = useUsersLoadMore(loadCount);
 
   const handleOrderChanged = () => {
-    setOrder(order === 'desc' ? 'asc' : 'desc');
+    setOrder(order === SortOrder.DESC ? SortOrder.ASC : SortOrder.DESC);
   }
 
   const handleLoadMore = () => {
