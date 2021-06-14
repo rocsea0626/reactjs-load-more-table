@@ -147,16 +147,28 @@ export const LoadMoreTable = (props) => {
     </TableContainer>
   );
 };
+// diff: [
+//   { field: 'name', oldValue: 'John', newValue: 'Bruce' },
+// ],
 
 LoadMoreTable.propTypes = {
   idText: PropTypes.string.isRequired,
   orderBy: PropTypes.string.isRequired,
   order: PropTypes.string.isRequired,
-  data: PropTypes.array.isRequired,
   isLoading: PropTypes.bool.isRequired,
   handleOrderChanged: PropTypes.func.isRequired,
   onLoadClicked: PropTypes.func.isRequired,
   error: PropTypes.object,
+  data: PropTypes.arrayOf(PropTypes.exact({
+    id: PropTypes.string,
+    timestamp: PropTypes.number,
+    diff: PropTypes.arrayOf(PropTypes.exact({
+      field: PropTypes.string,
+      oldValue: PropTypes.string,
+      newValue: PropTypes.string,
+    }))
+  })).isRequired,
+
 };
 
 export default LoadMoreTable;
