@@ -1,17 +1,17 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Users } from './Users';
+import { LoadMoreTable } from './LoadMoreTable';
 import { mount } from 'enzyme';
 import { usersDiff } from '../../lib/api/data';
 import renderer from 'react-test-renderer';
 
-describe('<Users />', () => {
+describe('<LoadMoreTable />', () => {
 
   describe('render users', () => {
     it('initial state', () => {
       const wrapper = shallow(
-        <Users
-          users={[]}
+        <LoadMoreTable
+          data={[]}
           error={null}
           isLoading={false}
           order={'desc'}
@@ -29,8 +29,8 @@ describe('<Users />', () => {
 
     it('loading state', () => {
       const wrapper = shallow(
-        <Users
-          users={[]}
+        <LoadMoreTable
+          data={[]}
           error={null}
           isLoading={true}
           order={'desc'}
@@ -48,8 +48,8 @@ describe('<Users />', () => {
 
     it('users successfuly loaded state', () => {
       const wrapper = shallow(
-        <Users
-          users={usersDiff.slice(0, 3)}
+        <LoadMoreTable
+          data={usersDiff.slice(0, 3)}
           error={null}
           isLoading={false}
           order={'desc'}
@@ -68,10 +68,10 @@ describe('<Users />', () => {
     });
 
     it('test desc sort state', () => {
-      const users = usersDiff.slice(0, 3)
+      const data = usersDiff.slice(0, 3)
       const wrapper = shallow(
-        <Users
-          users={users}
+        <LoadMoreTable
+          data={data}
           error={null}
           isLoading={false}
           order={'desc'}
@@ -91,10 +91,10 @@ describe('<Users />', () => {
     });
 
     it('test asc sort state', () => {
-      const users = usersDiff.slice(0, 3)
+      const data = usersDiff.slice(0, 3)
       const wrapper = shallow(
-        <Users
-          users={users}
+        <LoadMoreTable
+          data={data}
           error={null}
           isLoading={false}
           order={'asc'}
@@ -115,8 +115,8 @@ describe('<Users />', () => {
 
     it('test load failed state', () => {
       const wrapper = shallow(
-        <Users
-          users={usersDiff.slice(0, 3)}
+        <LoadMoreTable
+          data={usersDiff.slice(0, 3)}
           error={{
             code: 500,
             error: 'Uknown error',
@@ -141,8 +141,8 @@ describe('<Users />', () => {
       const mockHandleOrderChanged = jest.fn();
 
       const wrapper = shallow(
-        <Users
-          users={[]}
+        <LoadMoreTable
+          data={[]}
           error={null}
           isLoading={false}
           order={'desc'}
@@ -162,8 +162,8 @@ describe('<Users />', () => {
       const mockOnLoadClicked = jest.fn();
 
       const wrapper = mount(
-        <Users
-          users={[]}
+        <LoadMoreTable
+          data={[]}
           error={null}
           isLoading={false}
           order={'desc'}
@@ -187,8 +187,8 @@ describe('<Users />', () => {
     it('desc order', () => {
       const tree = renderer
         .create(
-          <Users
-            users={usersDiff.slice(0, 10)}
+          <LoadMoreTable
+            data={usersDiff.slice(0, 10)}
             error={null}
             isLoading={false}
             order={'desc'}
@@ -203,8 +203,8 @@ describe('<Users />', () => {
     it('asc order', () => {
       const tree = renderer
         .create(
-          <Users
-            users={usersDiff.slice(0, 10)}
+          <LoadMoreTable
+            data={usersDiff.slice(0, 10)}
             error={null}
             isLoading={false}
             order={'asc'}

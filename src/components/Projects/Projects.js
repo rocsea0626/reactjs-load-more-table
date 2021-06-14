@@ -4,15 +4,15 @@ import {
 } from '../../components';
 import {
   SortOrder
-} from '../../constants'
+} from '../../constants';
 import api from '../../lib/api';
 import { useLoadMore } from '../../hooks'
 
-export const Users = (props) => {
+export const Projects = (props) => {
 
   const [order, setOrder] = useState(SortOrder.DESC);
   const [loadCount, setLoadCount] = useState(0);
-  const [data, error, loading] = useLoadMore(loadCount, api.getUsersDiff);
+  const [data, error, loading] = useLoadMore(loadCount, api.getProjectsDiff);
 
   const handleOrderChanged = () => {
     setOrder(order === SortOrder.DESC ? SortOrder.ASC : SortOrder.DESC);
@@ -37,4 +37,4 @@ export const Users = (props) => {
 
 };
 
-export default Users;
+export default Projects;

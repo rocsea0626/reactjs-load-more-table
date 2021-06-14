@@ -1,5 +1,13 @@
 # React frontend assignment
 
+## How to use
+### Run app in dev mode
+`npm install`
+`npm start`
+
+### Run test
+`npm test`  
+
 ## Description
 
 Your task is to implement a component or a set of components allowing the users to fetch and display change history of **users** and **projects** in separate tables according to the designs and requirements below. You can use the provided packages and add new ones if necessary. Please provide unit tests for your code.
@@ -22,15 +30,6 @@ Your task is to implement a component or a set of components allowing the users 
 
 ### Error state
 ![Screen Shot 2020-03-03 at 13 25 09](https://user-images.githubusercontent.com/3663640/75771398-92cf9300-5d52-11ea-8d06-660cd55bb1a1.png)
-
-
-## How to use
-### Run app in dev mode
-`npm install`
-`npm start`
-
-### Run test
-`npm test`
 
 ## Setup
 

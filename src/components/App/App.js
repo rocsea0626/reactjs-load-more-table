@@ -1,23 +1,48 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Container from '@material-ui/core/Container';
-import { Users } from '../../components'
-import { useUsersLoadMore } from '../../hooks'
-import {
-  SortOrder
-} from '../../constants'
+import { useRoutes } from 'hookrouter';
+import { Users, Projects } from '../../components'
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import Button from '@material-ui/core/Button';
+import { Card } from '@material-ui/core';
+
+
+const Home = () => {
+  return (
+
+    <Card>
+      <List component="nav" aria-label="secondary mailbox folders">
+        <ListItem button>
+          <Button
+            variant="contained"
+            color="primary"
+            size="large"
+            href="/users"
+          >Users</Button>
+        </ListItem>
+        <ListItem button>
+          <Button
+            variant="contained"
+            color="primary"
+            size="large"
+            href="/projects"
+          >Projects</Button>
+        </ListItem>
+      </List>
+    </Card>
+  )
+}
+
 export const App = () => {
 
-  const [order, setOrder] = useState(SortOrder.DESC);
-  const [loadCount, setLoadCount] = useState(0);
-  const [users, error, loading] = useUsersLoadMore(loadCount);
-
-  const handleOrderChanged = () => {
-    setOrder(order === SortOrder.DESC ? SortOrder.ASC : SortOrder.DESC);
+  const routes = {
+    "/": () => <Home />,
+    "/users": () => <Users />,
+    "/projects": () => <Projects />
   }
 
-  const handleLoadMore = () => {
-    setLoadCount((prevLoadCount) => prevLoadCount + 1);
-  }
+  const routeResult = useRoutes(routes);
 
   return (
     <Container
@@ -25,17 +50,11 @@ export const App = () => {
       maxWidth="md"
       data-testid="app-box"
     >
-      <Users
-        users={users}
-        error={error}
-        isLoading={loading}
-        order={order}
-        orderBy='timestamp'
-        handleOrderChanged={handleOrderChanged}
-        onLoadClicked={handleLoadMore}
-      />
+      {routeResult}
+
     </Container>
-  );
+  )
+
 };
 
 export default App;

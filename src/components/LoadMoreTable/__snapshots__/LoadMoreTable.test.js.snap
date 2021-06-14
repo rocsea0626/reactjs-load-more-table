@@ -1,0 +1,860 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LoadMoreTable /> snapshot test asc order 1`] = `
+<div
+  className="MuiPaper-root MuiTableContainer-root MuiPaper-elevation1 MuiPaper-rounded"
+>
+  <table
+    className="MuiTable-root makeStyles-table-1"
+    data-testid="users-table"
+  >
+    <thead
+      className="MuiTableHead-root"
+    >
+      <tr
+        className="MuiTableRow-root MuiTableRow-head"
+      >
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head makeStyles-tableHeader-2"
+          scope="col"
+        >
+          <span
+            aria-disabled={false}
+            className="MuiButtonBase-root MuiTableSortLabel-root MuiTableSortLabel-active"
+            data-testid="users-sort"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            Date
+            <span
+              className="makeStyles-visuallyHidden-3"
+            >
+              sorted ascending
+            </span>
+            <svg
+              aria-hidden="true"
+              className="MuiSvgIcon-root MuiTableSortLabel-icon MuiTableSortLabel-iconDirectionAsc"
+              focusable="false"
+              role="presentation"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+              />
+            </svg>
+          </span>
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head makeStyles-tableHeader-2"
+          scope="col"
+        >
+          User ID
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head makeStyles-tableHeader-2"
+          scope="col"
+        >
+          Old value
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head makeStyles-tableHeader-2"
+          scope="col"
+        >
+          New value
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      className="MuiTableBody-root"
+    >
+      <tr
+        className="MuiTableRow-root"
+        data-testid="users-table-row"
+      >
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+          data-testid="users-table-row-date"
+          scope="row"
+        >
+          2020-02-14
+        </th>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          e28d290a-a2f2-48c2-9001-ff43884e271b
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          John
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          Bruce
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        data-testid="users-table-row"
+      >
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+          data-testid="users-table-row-date"
+          scope="row"
+        >
+          2020-02-14
+        </th>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          a342290a-a2f2-48c2-9001-ff43884e779d
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          John
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          Guo
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        data-testid="users-table-row"
+      >
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+          data-testid="users-table-row-date"
+          scope="row"
+        >
+          2020-02-15
+        </th>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          8bd0166f-f0c6-48fd-9fcd-a17e76eb1e92
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          Bruce
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          Nick
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        data-testid="users-table-row"
+      >
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+          data-testid="users-table-row-date"
+          scope="row"
+        >
+          2020-02-16
+        </th>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          0a75a2b3-be64-4aeb-ba4c-8ddb913791ac
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          Nick
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          Michel
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        data-testid="users-table-row"
+      >
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+          data-testid="users-table-row-date"
+          scope="row"
+        >
+          2020-02-17
+        </th>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          bf008d15-3d34-422e-9041-039c59d9ed3d
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          Michel
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          Michael
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        data-testid="users-table-row"
+      >
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+          data-testid="users-table-row-date"
+          scope="row"
+        >
+          2020-02-17
+        </th>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          ce118d15-3d34-422e-9041-039c59d9fe4e
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          Michel
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          Guo
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        data-testid="users-table-row"
+      >
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+          data-testid="users-table-row-date"
+          scope="row"
+        >
+          2020-02-18
+        </th>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          2a83c13c-c040-4672-9b7b-c004ce614264
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          Michael
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          Constantine Prescott Nathaniel Jr.
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        data-testid="users-table-row"
+      >
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+          data-testid="users-table-row-date"
+          scope="row"
+        >
+          2020-02-19
+        </th>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          bb177085-7340-4cf7-a892-f436f20951e2
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          Constantine Prescott Nathaniel Jr.
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          Constantine Prescott Nathaniel Sr.
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        data-testid="users-table-row"
+      >
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+          data-testid="users-table-row-date"
+          scope="row"
+        >
+          2020-02-19
+        </th>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          cc287085-7340-4cf7-a892-f436f20962f3
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          Constantine Prescott Nathaniel Jr.
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          Constantine Prescott Nathaniel Sr.
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        data-testid="users-table-row"
+      >
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+          data-testid="users-table-row-date"
+          scope="row"
+        >
+          2020-02-22
+        </th>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          67f06020-95b3-484d-8713-36584c79e94a
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          Constantine P. N.
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          Joe
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div
+    className="MuiBox-root MuiBox-root-115 Styled(MuiBox)-root-72"
+    data-testid="load-btn-box"
+  >
+    <button
+      className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+      data-testid="load-btn"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      <span
+        className="MuiButton-label"
+      >
+        Load more
+      </span>
+      <span
+        className="MuiTouchRipple-root"
+      />
+    </button>
+  </div>
+</div>
+`;
+
+exports[`<LoadMoreTable /> snapshot test desc order 1`] = `
+<div
+  className="MuiPaper-root MuiTableContainer-root MuiPaper-elevation1 MuiPaper-rounded"
+>
+  <table
+    className="MuiTable-root makeStyles-table-1"
+    data-testid="users-table"
+  >
+    <thead
+      className="MuiTableHead-root"
+    >
+      <tr
+        className="MuiTableRow-root MuiTableRow-head"
+      >
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head makeStyles-tableHeader-2"
+          scope="col"
+        >
+          <span
+            aria-disabled={false}
+            className="MuiButtonBase-root MuiTableSortLabel-root MuiTableSortLabel-active"
+            data-testid="users-sort"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            Date
+            <span
+              className="makeStyles-visuallyHidden-3"
+            >
+              sorted descending
+            </span>
+            <svg
+              aria-hidden="true"
+              className="MuiSvgIcon-root MuiTableSortLabel-icon MuiTableSortLabel-iconDirectionDesc"
+              focusable="false"
+              role="presentation"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+              />
+            </svg>
+          </span>
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head makeStyles-tableHeader-2"
+          scope="col"
+        >
+          User ID
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head makeStyles-tableHeader-2"
+          scope="col"
+        >
+          Old value
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head makeStyles-tableHeader-2"
+          scope="col"
+        >
+          New value
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      className="MuiTableBody-root"
+    >
+      <tr
+        className="MuiTableRow-root"
+        data-testid="users-table-row"
+      >
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+          data-testid="users-table-row-date"
+          scope="row"
+        >
+          2020-02-22
+        </th>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          67f06020-95b3-484d-8713-36584c79e94a
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          Constantine P. N.
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          Joe
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        data-testid="users-table-row"
+      >
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+          data-testid="users-table-row-date"
+          scope="row"
+        >
+          2020-02-19
+        </th>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          bb177085-7340-4cf7-a892-f436f20951e2
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          Constantine Prescott Nathaniel Jr.
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          Constantine Prescott Nathaniel Sr.
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        data-testid="users-table-row"
+      >
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+          data-testid="users-table-row-date"
+          scope="row"
+        >
+          2020-02-19
+        </th>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          cc287085-7340-4cf7-a892-f436f20962f3
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          Constantine Prescott Nathaniel Jr.
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          Constantine Prescott Nathaniel Sr.
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        data-testid="users-table-row"
+      >
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+          data-testid="users-table-row-date"
+          scope="row"
+        >
+          2020-02-18
+        </th>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          2a83c13c-c040-4672-9b7b-c004ce614264
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          Michael
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          Constantine Prescott Nathaniel Jr.
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        data-testid="users-table-row"
+      >
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+          data-testid="users-table-row-date"
+          scope="row"
+        >
+          2020-02-17
+        </th>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          bf008d15-3d34-422e-9041-039c59d9ed3d
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          Michel
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          Michael
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        data-testid="users-table-row"
+      >
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+          data-testid="users-table-row-date"
+          scope="row"
+        >
+          2020-02-17
+        </th>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          ce118d15-3d34-422e-9041-039c59d9fe4e
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          Michel
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          Guo
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        data-testid="users-table-row"
+      >
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+          data-testid="users-table-row-date"
+          scope="row"
+        >
+          2020-02-16
+        </th>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          0a75a2b3-be64-4aeb-ba4c-8ddb913791ac
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          Nick
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          Michel
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        data-testid="users-table-row"
+      >
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+          data-testid="users-table-row-date"
+          scope="row"
+        >
+          2020-02-15
+        </th>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          8bd0166f-f0c6-48fd-9fcd-a17e76eb1e92
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          Bruce
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          Nick
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        data-testid="users-table-row"
+      >
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+          data-testid="users-table-row-date"
+          scope="row"
+        >
+          2020-02-14
+        </th>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          e28d290a-a2f2-48c2-9001-ff43884e271b
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          John
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          Bruce
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root"
+        data-testid="users-table-row"
+      >
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+          data-testid="users-table-row-date"
+          scope="row"
+        >
+          2020-02-14
+        </th>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          a342290a-a2f2-48c2-9001-ff43884e779d
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          John
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body"
+        >
+          Guo
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div
+    className="MuiBox-root MuiBox-root-114 Styled(MuiBox)-root-72"
+    data-testid="load-btn-box"
+  >
+    <button
+      className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+      data-testid="load-btn"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      <span
+        className="MuiButton-label"
+      >
+        Load more
+      </span>
+    </button>
+  </div>
+</div>
+`;

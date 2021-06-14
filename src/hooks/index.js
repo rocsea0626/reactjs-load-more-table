@@ -1,1 +1,1 @@
-export { default as useUsersLoadMore } from "./useUsersLoadMore";
+export { default as useLoadMore } from "./useLoadMore";

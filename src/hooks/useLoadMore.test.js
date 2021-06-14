@@ -1,12 +1,12 @@
 import React from 'react';
 import { render, unmountComponentAtNode } from "react-dom";
 import { act } from "react-dom/test-utils";
-import useUsersLoadMore from './useUsersLoadMore';
+import useLoadMore from './useLoadMore';
 import api from '../lib/api';
 import { usersDiff } from '../lib/api/data';
 
 const TestComponent = (loadCount) => {
-  const [users, error, loading] = useUsersLoadMore(loadCount);
+  const [data, error, loading] = useLoadMore(loadCount, api.getUsersDiff);
   if (loading) {
     return <div>loading</div>;
   }
@@ -14,10 +14,10 @@ const TestComponent = (loadCount) => {
     return <div>error</div>;
   }
 
-  return <div>{users.length}</div>;
+  return <div>{data.length}</div>;
 }
 
-describe('test hook, useUsersLoadMore()', () => {
+describe('test hook, useLoadMore()', () => {
 
   let container = null;
   const mockGetUsersDiff = jest.spyOn(api, 'getUsersDiff');
