@@ -24,6 +24,7 @@ export const Users = (props) => {
 
   return (
     <LoadMoreTable
+      idText='User&nbsp;ID'
       data={data}
       error={error}
       isLoading={loading}

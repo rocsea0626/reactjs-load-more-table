@@ -44,6 +44,7 @@ export const LoadMoreTable = (props) => {
   const classes = useStyles();
 
   const {
+    idText,
     order,
     orderBy,
     data,
@@ -57,27 +58,27 @@ export const LoadMoreTable = (props) => {
   const stableSort = (data, comparator) => {
 
     // to mantaian sort stabiliy, temporary array holds data with position and sort-value
-    const stabalizedUsers = data.map((user, index) => [user, index]);
-    const INDEX_USER = 0, INDEX_POS = 1;
+    const stabalizedData = data.map((data, index) => [data, index]);
+    const INDEX_DATA = 0, INDEX_POS = 1;
 
-    stabalizedUsers.sort((user1, user2) => {
+    stabalizedData.sort((data1, data2) => {
 
-      const order = comparator(user1[INDEX_USER], user2[INDEX_USER]);
+      const order = comparator(data1[INDEX_DATA], data2[INDEX_DATA]);
       if (order !== 0) return order;
-      return user1[INDEX_POS] - user2[INDEX_POS];
+      return data1[INDEX_POS] - data2[INDEX_POS];
     });
 
-    return stabalizedUsers.map((user) => user[INDEX_USER]);
+    return stabalizedData.map((data) => data[INDEX_DATA]);
   }
 
   const getComparator = (order, orderBy) => {
     return order === SortOrder.DESC
-      ? (user1, user2) => descendingComparator(user1, user2, orderBy)
-      : (user1, user2) => -descendingComparator(user1, user2, orderBy);
+      ? (data1, data2) => descendingComparator(data1, data2, orderBy)
+      : (data1, data2) => -descendingComparator(data1, data2, orderBy);
   }
 
-  const descendingComparator = (user1, user2, orderBy) => {
-    return Number.parseInt(user2[orderBy]) - Number.parseInt(user1[orderBy])
+  const descendingComparator = (data1, data2, orderBy) => {
+    return Number.parseInt(data2[orderBy]) - Number.parseInt(data1[orderBy])
   }
 
   return (
@@ -101,15 +102,15 @@ export const LoadMoreTable = (props) => {
                 </span>
               </TableSortLabel>
             </TableCell>
-            <TableCell className={classes.tableHeader}>User&nbsp;ID</TableCell>
+            <TableCell className={classes.tableHeader}>{idText}</TableCell>
             <TableCell className={classes.tableHeader}>Old&nbsp;value</TableCell>
             <TableCell className={classes.tableHeader}>New&nbsp;value</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {stableSort(data, getComparator(order, orderBy)).map((user) => (
+          {stableSort(data, getComparator(order, orderBy)).map((data) => (
             <TableRow
-              key={user.id}
+              key={data.id}
               data-testid="users-table-row"
             >
               <TableCell
@@ -117,11 +118,11 @@ export const LoadMoreTable = (props) => {
                 component="th"
                 scope="row"
               >
-                {moment(user[orderBy]).format('YYYY-MM-DD')}
+                {moment(data[orderBy]).format('YYYY-MM-DD')}
               </TableCell>
-              <TableCell>{user.id}</TableCell>
-              <TableCell>{user.diff[0].oldValue}</TableCell>
-              <TableCell>{user.diff[0].newValue}</TableCell>
+              <TableCell>{data.id}</TableCell>
+              <TableCell>{data.diff[0].oldValue}</TableCell>
+              <TableCell>{data.diff[0].newValue}</TableCell>
             </TableRow>
           ))}
         </TableBody>
@@ -148,6 +149,7 @@ export const LoadMoreTable = (props) => {
 };
 
 LoadMoreTable.propTypes = {
+  idText: PropTypes.string.isRequired,
   orderBy: PropTypes.string.isRequired,
   order: PropTypes.string.isRequired,
   data: PropTypes.array.isRequired,

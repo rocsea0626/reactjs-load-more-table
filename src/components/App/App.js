@@ -1,36 +1,40 @@
 import React from 'react';
 import Container from '@material-ui/core/Container';
 import { useRoutes } from 'hookrouter';
-import { Users, Projects } from '../../components'
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
+import { Users, Projects, Nav, NoPageFound } from '../../components'
 import Button from '@material-ui/core/Button';
-import { Card } from '@material-ui/core';
-
+import { Grid } from '@material-ui/core';
 
 const Home = () => {
   return (
 
-    <Card>
-      <List component="nav" aria-label="secondary mailbox folders">
-        <ListItem button>
-          <Button
-            variant="contained"
-            color="primary"
-            size="large"
-            href="/users"
-          >Users</Button>
-        </ListItem>
-        <ListItem button>
-          <Button
-            variant="contained"
-            color="primary"
-            size="large"
-            href="/projects"
-          >Projects</Button>
-        </ListItem>
-      </List>
-    </Card>
+    <Grid
+      container
+      spacing={2}
+      direction="column"
+      alignItems="center"
+      justify="center"
+      style={{ minHeight: '100vh' }}
+    >
+
+      <Grid item xs={3}>
+        <Button
+          variant="outlined"
+          color="primary"
+          size="large"
+          href="/users"
+        >Users</Button>
+      </Grid>
+      <Grid item xs={3}>
+        <Button
+          variant="outlined"
+          color="primary"
+          size="large"
+          href="/projects"
+        >Projects</Button>
+      </Grid>
+    </Grid>
+
   )
 }
 
@@ -47,10 +51,10 @@ export const App = () => {
   return (
     <Container
       className="app"
-      maxWidth="md"
       data-testid="app-box"
     >
-      {routeResult}
+      <Nav />
+      {routeResult || <NoPageFound />}
 
     </Container>
   )

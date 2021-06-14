@@ -11,6 +11,7 @@ describe('<LoadMoreTable />', () => {
     it('initial state', () => {
       const wrapper = shallow(
         <LoadMoreTable
+          idText='User&nbsp;ID'
           data={[]}
           error={null}
           isLoading={false}
@@ -30,6 +31,7 @@ describe('<LoadMoreTable />', () => {
     it('loading state', () => {
       const wrapper = shallow(
         <LoadMoreTable
+          idText='User&nbsp;ID'
           data={[]}
           error={null}
           isLoading={true}
@@ -49,6 +51,7 @@ describe('<LoadMoreTable />', () => {
     it('users successfuly loaded state', () => {
       const wrapper = shallow(
         <LoadMoreTable
+          idText='User&nbsp;ID'
           data={usersDiff.slice(0, 3)}
           error={null}
           isLoading={false}
@@ -71,6 +74,7 @@ describe('<LoadMoreTable />', () => {
       const data = usersDiff.slice(0, 3)
       const wrapper = shallow(
         <LoadMoreTable
+          idText='User&nbsp;ID'
           data={data}
           error={null}
           isLoading={false}
@@ -94,6 +98,7 @@ describe('<LoadMoreTable />', () => {
       const data = usersDiff.slice(0, 3)
       const wrapper = shallow(
         <LoadMoreTable
+          idText='User&nbsp;ID'
           data={data}
           error={null}
           isLoading={false}
@@ -116,6 +121,7 @@ describe('<LoadMoreTable />', () => {
     it('test load failed state', () => {
       const wrapper = shallow(
         <LoadMoreTable
+          idText='User&nbsp;ID'
           data={usersDiff.slice(0, 3)}
           error={{
             code: 500,
@@ -142,6 +148,7 @@ describe('<LoadMoreTable />', () => {
 
       const wrapper = shallow(
         <LoadMoreTable
+          idText='User&nbsp;ID'
           data={[]}
           error={null}
           isLoading={false}
@@ -163,6 +170,7 @@ describe('<LoadMoreTable />', () => {
 
       const wrapper = mount(
         <LoadMoreTable
+          idText='User&nbsp;ID'
           data={[]}
           error={null}
           isLoading={false}
@@ -188,6 +196,7 @@ describe('<LoadMoreTable />', () => {
       const tree = renderer
         .create(
           <LoadMoreTable
+            idText='User&nbsp;ID'
             data={usersDiff.slice(0, 10)}
             error={null}
             isLoading={false}
@@ -204,6 +213,7 @@ describe('<LoadMoreTable />', () => {
       const tree = renderer
         .create(
           <LoadMoreTable
+            idText='User&nbsp;ID'
             data={usersDiff.slice(0, 10)}
             error={null}
             isLoading={false}

@@ -11,7 +11,7 @@ function useLoadMore(loadCount, loadDataFn) {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    console.log(`useEffect()`);
+    // console.log(`useEffect()`);
     const fetchData = async () => {
       try {
         setLoading(true);
@@ -27,7 +27,7 @@ function useLoadMore(loadCount, loadDataFn) {
 
     fetchData();
 
-  }, [loadCount]);
+  }, [loadCount, loadDataFn]);
 
   return [data, error, loading];
 }

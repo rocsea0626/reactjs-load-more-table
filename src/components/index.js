@@ -1,5 +1,7 @@
 export { default as Users } from "./Users/Users";
 export { default as Projects } from "./Projects/Projects";
+export { default as Nav } from "./Nav/Nav";
+export { default as NoPageFound } from "./NoPageFound/NoPageFound";
 export { default as LoadMoreTable } from "./LoadMoreTable/LoadMoreTable";
 export { default as App } from "./App/App";
 export { default as ErrorText } from "./ErrorText/ErrorText";
