@@ -12,7 +12,7 @@ describe('<LoadingAnimation />', () => {
 
     it('renders LoadingAnimation, show=false', () => {
       const wrapper = shallow(<LoadingAnimation show={false} />);
-      expect(wrapper.find({ 'data-testid': 'loading-animation-box' })).toBeDefined();
+      expect(wrapper.find({ 'data-testid': 'loading-animation-box' }).isEmptyRender()).toBe(true);
     });
 
   });

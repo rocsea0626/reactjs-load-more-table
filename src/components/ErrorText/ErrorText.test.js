@@ -12,7 +12,7 @@ describe('<ErrorText />', () => {
 
     it('renders ErrorText, show={false}', () => {
       const wrapper = shallow(<ErrorText show={false} />);
-      expect(wrapper.find({ 'data-testid': 'error-text-box' })).toBeDefined();
+      expect(wrapper.find({ 'data-testid': 'error-text-box' }).isEmptyRender()).toBe(true);
     });
 
   });

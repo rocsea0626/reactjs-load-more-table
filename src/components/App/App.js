@@ -1,6 +1,6 @@
 import React from 'react';
 import Container from '@material-ui/core/Container';
-import { useRoutes } from 'hookrouter';
+import { useRoutes, usePath } from 'hookrouter';
 import { Users, Projects, Nav, NoPageFound } from '../../components'
 import Button from '@material-ui/core/Button';
 import { Grid } from '@material-ui/core';
@@ -47,13 +47,14 @@ export const App = () => {
   }
 
   const routeResult = useRoutes(routes);
+  const path = usePath();
 
   return (
     <Container
       className="app"
       data-testid="app-box"
     >
-      <Nav />
+      <Nav path={path} />
       {routeResult || <NoPageFound />}
 
     </Container>

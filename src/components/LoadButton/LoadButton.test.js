@@ -23,7 +23,7 @@ describe('<LoadButton />', () => {
           hasError={true}
         />
       );
-      expect(wrapper.find({ 'data-testid': 'load-btn-box' })).toBeDefined();
+      expect(wrapper.find({ 'data-testid': 'load-btn-box' }).isEmptyRender()).toBe(true);
     });
 
     it('renders LoadButton, hasError={true}', () => {
